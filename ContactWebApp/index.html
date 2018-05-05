@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
     <script src="Scripts/AngularJS/angular.js"></script>
     <script src="Scripts/AppScripts/App.js"></script>
     <script src="Scripts/AppScripts/contactService.js"></script>
@@ -10,8 +12,15 @@
 </head>
 <body ng-app="contactApp">
     <div ng-controller="contactController as CC">
-        <form name="contactForm">
-            <table>
+        <form name="contactForm" class="form">
+            <table class="table table-condensed">
+                <thead class="formHeader">
+                    <tr>
+                        <td colspan="2">
+                            <h4> Contact Information</h4>
+                        </td>
+                    </tr>
+                </thead>
                 <tr>
                     <td>First Name:</td>
                     <td>
@@ -47,15 +56,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
                     <td>
-                        <input type="hidden" ng-model="CC.newcontact.Id" />
+                        <!--<input type="hidden" ng-model="CC.newcontact.Id" />-->
                         <input type="button" value="Submit" ng-click="CC.editMode ? CC.updateContact(CC.newContact.Id, CC.newContact) : CC.addContact(CC.newContact)"
                                ng-disabled="contactForm.$invalid" class="btn btn-primary">
                     </td>
                 </tr>
             </table>
         </form>
-        <table border="1" cellspacing="0" ng-show="CC.contacts.length > 0">
+        <table class="table table-bordered table-striped table-responsive" ng-show="CC.contacts.length > 0">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -63,7 +73,7 @@
                     <th>Phone Number</th>
                     <th>Email</th>
                     <th>Active</th>
-                    <th>Edit/Update</th>
+                    <th>Modify / Remove</th>
                 </tr>
             </thead>
             <tr ng-repeat="contact in CC.contacts">
@@ -74,7 +84,7 @@
                 <td>{{contact.Active ? "Active":"InActive"}}</td><!--TODO - display text - -->
                 <td>
                     <a href="#" ng-click="CC.editContact(contact.Id)">Modify</a> /
-                    <a href="#" ng-click="CC.deleteContact(contact.Id)">Delete</a>
+                    <a href="#" ng-click="CC.deleteContact(contact.Id)">Remove</a>
                 </td>
             </tr>
         </table>
