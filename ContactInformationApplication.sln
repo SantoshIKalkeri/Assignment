@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactServices", "WebApplication2\ContactServices.csproj", "{5EA8F604-CE7C-40ED-B200-67B0E2448AB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactServices", "ContactServices\ContactServices.csproj", "{5EA8F604-CE7C-40ED-B200-67B0E2448AB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactRepository", "ContactRepository\ContactRepository.csproj", "{45FB87FE-5730-4798-ADDB-73CA47E82CE5}"
 EndProject
